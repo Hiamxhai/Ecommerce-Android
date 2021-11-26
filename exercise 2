@@ -1,0 +1,26 @@
+//tach chuoi mp3
+
+fun TachCach1(path:String):String {
+
+    var arr = path.split("/")
+    return arr[arr.size-1]
+}
+fun TachCach2(path: String):String
+{
+    var vt = path.lastIndexOf("/")
+    return path.substring(vt+1)
+}
+fun  TachCach3(path: String):String {
+    var vt1 = path.lastIndexOf("/")
+    var vt2 = path.lastIndexOf(".")
+    return path.substring(vt1 + 1, vt2)
+}
+fun main() {
+    var path = "d:/nhac/nhacsen/longme.mp3"
+    var ten1 = TachCach1(path)
+    println(ten1)
+    var ten2 =TachCach2(path)
+    println(ten2)
+    var ten3 = TachCach3(path)
+    println(ten3)
+}
