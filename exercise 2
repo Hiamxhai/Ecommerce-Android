@@ -24,3 +24,22 @@ fun main() {
     var ten3 = TachCach3(path)
     println(ten3)
 }
+// kiem tra poly
+fun kiemTraPanlyDrome(s:String):Boolean {
+    for (i in s.indices) {
+
+        if (s[i]!= s[s.length-i-1])
+            return false
+    }
+    return true
+}
+fun main() {
+    var s = "radar"
+    var kt = kiemTraPanlyDrome(s)
+    if(kt) {
+        println("$s la chuoi palynrome")
+    }
+    else {
+        println("$s ko la chuoi panlyrome")
+    }
+}
