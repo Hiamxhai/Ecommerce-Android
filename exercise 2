@@ -43,3 +43,25 @@ fun main() {
         println("$s ko la chuoi panlyrome")
     }
 }
+
+//Toi uu ten
+fun ToiUu(s: String): String {
+
+    var sTam = s.trim()
+    var dsWord = sTam.split(" ")
+    var sToiUu=""
+    for (word in dsWord) {
+        if (word.length > 0) {
+            var wordMoi = word.toLowerCase()
+            wordMoi = wordMoi.replaceFirst(wordMoi[0]+ "",
+                (wordMoi[0]+"").toUpperCase())
+            sToiUu+= wordMoi+" "
+        }
+    }
+    return sToiUu.trim()
+}
+fun main() {
+    var ten = "   Vũ sƠn HảI  "
+    var ten2 =ToiUu(ten)
+    println(ten2)
+}
