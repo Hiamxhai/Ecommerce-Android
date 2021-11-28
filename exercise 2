@@ -65,3 +65,25 @@ fun main() {
     var ten2 =ToiUu(ten)
     println(ten2)
 }
+
+//xu li mang 2 chieu 
+import java.util.*
+
+fun main() {
+    var M:Array<IntArray> = Array(10,{ IntArray(5) })
+    var ran = Random()
+    for (i in M.indices) {
+        for (j in M[i].indices) {
+            M[i][j] = ran.nextInt(100)
+        }
+    }
+    println("Mang 2 chieu")
+    for (i in M.indices) {
+        for (j in M[i].indices) {
+            print("${M[i][j]}\t")
+        }
+        println()
+    }
+
+}
+
