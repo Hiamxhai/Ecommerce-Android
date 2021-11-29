@@ -87,3 +87,92 @@ fun main() {
 
 }
 
+//Colection 
+import java.util.*
+
+fun main() {
+    var ds:MutableList<Int> = mutableListOf()
+    ds.add(5)
+    ds.add(10)
+    ds.add(8)
+    ds.addAll(mutableListOf(1,2,4,7))
+    for (item in ds)
+        print("$item\t")
+    ds.sort()
+    println("\nSap xep tang dan:")
+    for (item in ds)
+        print("$item\t")
+    ds.sortDescending()
+    ds.removeAt(2)
+    println("\n sap xep giam dan")
+    for (item in ds)
+        print("$item\t")
+    var dsLe = ds.filter { x -> x % 2 == 1 }
+    println("Cac so le la")
+    for (item in dsLe)
+        print("$item\t")
+    println("Sau khi chen 9")
+    ds.add(3,9) // chen vao vi tri 3 co gia tri bang 9
+    for (item in ds)
+        print("$item \t")
+    ds[1] = 88 // sua vi tri so 1
+    println("Sau khi sua 8 thanh 88")
+    for (item in ds)
+        print("$item \t")
+}
+
+//bai tap mang
+import java.util.*
+
+fun main() {
+    var n:Int?
+    println("Nhap so phan tu cua mang")
+    n = readLine()?.toInt()
+
+    if (n == null) return
+
+    var M: IntArray = kotlin.IntArray(10)
+
+    var random = Random()
+    for (i in M.indices)
+        M[i] = random.nextInt(100)
+        println("Ds cac phan tu trong mang")
+    for (item in M)
+        print("$item\t")
+    //tinh tong mang
+    var sum = M.sum()
+    println("\n$ Tong mang : ${sum}")
+    println("Nhap k :")
+    var k:Int? = readLine()?.toInt()
+    if (k == null) return
+    var dem = 0
+        for (item in M ) {
+            if (item == k)
+                dem++
+        }
+    println("So $k xuat hien $dem lan ")
+    // tim phan tu lon nhat nho nhat
+ //   println("phan tu lonh hat = ${M.max()}")
+//    println("phan tu nho nhat = ${M.min()}")
+
+    var dsNguyenTo = M.filter { x ->
+        var dem = 0
+        for (i in 1..x) {
+            if (x % i == 0)
+                dem ++
+        }
+         dem == 2
+    }
+    println("Cac so nguyen to : ")
+    for (item in dsNguyenTo)
+        print("$item\t")
+    M.sort()
+     println("\nmang tang dan")
+        for (item in M)
+        print("$item\t")
+    M.sortDescending()
+      println("\nmang giam dan")
+        for (item in M)
+        print("$item\t")
+
+}
