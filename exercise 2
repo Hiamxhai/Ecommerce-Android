@@ -176,3 +176,65 @@ fun main() {
         print("$item\t")
 
 }
+//colletion
+import java.util.*
+
+fun main() {
+    var ds:MutableList<Int> = mutableListOf()
+    while (true) {
+        println("Nhập giá trị : ")
+        var x:Int? = readLine()?.toInt()
+        if (x == null) continue
+        ds.add(x)
+        println("Tiếp không(c/k) :")
+        var hoi = readLine()
+       if(hoi?.equals("k",true) == true) {
+           break
+       }
+    }
+    println("Colletion sau khi nhập là :")
+    for (item in ds)
+        print("$item\t")
+
+    println("\nBạn muốn sửa ở vị trí nào :")
+        var vt = readLine()?.toInt()
+        if (vt!= null)
+            if (vt >= 0 && vt < ds.size) {
+                println("Mời bạn nhập giá trị mới:")
+            var gt = readLine()?.toInt()
+                if (gt!= null)
+                    ds[vt] = gt
+    }
+    println("Colletion sau khi sửa là :")
+        for (item in ds)
+        print("$item\t")
+
+    println("\nBạn muốn xóa vị trí nào : ")
+    var vtXoa = readLine()?.toInt()
+        if (vtXoa != null && vtXoa >= 0 && vtXoa < ds.size) {
+            ds.removeAt(vtXoa)
+    }
+    println("Collection sau khi xóa là")
+        for (item in ds)
+        print("$item\t")
+
+    println("\nBạn muốn tìm số nào :")
+    var soTim = readLine()?.toInt()
+    if (soTim != null) {
+        var kq = ds.filter { x -> x == soTim }
+        if (kq.size > 0)
+            println("tìm thấy $soTim !")
+        else
+            println("Không tìm thấy $soTim !")
+    }
+
+    ds.sort()
+    println("Colletion sau khi tăng dần")
+        for (item in ds)
+            print("$item\t")
+    println("Collection sau khi giảm dần")
+    ds.sortDescending()
+        for (item in ds)
+            print("$item\t")
+
+}
